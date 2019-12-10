@@ -1,0 +1,21 @@
+server:
+  port: 8081
+spring:
+  dubbo:
+    application:
+      name: service-provider
+    base-package: com.test.cheng # dubbo���񷢲������ڵİ�
+    registry:
+      address: 127.0.0.1 # zookeeperע�����ĵĵ�ַ
+      port: 2181       # zookeeperע�����ĵĶ˿�
+      protocol: zookeeper
+      register: true
+    protocol:
+      name: dubbo
+      port: 30003
+      accesslog: true
+    monitor:
+      protocol: register
+    provider:
+      retries: 1
+      delay: -1
